@@ -1,8 +1,15 @@
-import { netflixShows } from "../data/netflixShows-data.js"
+import { NetflixShow } from "../models/netflixShow.js"
 
 function index(req, res) {
-  res.render('netflixShows/index', {
-    netflixShows: netflixShows
+  NetflixShow.find({})
+  .then(netflixShows=> {
+    res.render('netflixShows/index', {
+      netflixShows: netflixShows
+    })
+  })
+  .catch(error=> {
+    console.log(error)
+    res.redirect('/')
   })
 }
 
