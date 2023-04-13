@@ -4,5 +4,8 @@ const router = Router()
 
 // GET localhost:3000/users
 router.get('/', netflixShowsCtrl.index)
+router.get('/new', netflixShowsCtrl.new)
+router.post('/', netflixShowsCtrl.create)
+router.get('/:netflixShowId', netflixShowsCtrl.show)
 
 export { router }

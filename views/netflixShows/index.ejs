@@ -11,12 +11,15 @@
   <ul>
     <% netflixShows.forEach(netflixShow => { %>
      <li>
-      <%= netflixShow.show %>
+      <a href="/netflixShows/<%= netflixShow._id %>">
+        <%= netflixShow.show %>
+      </a>
       - 
       <%= netflixShow.stars%> 
       &#9733
      </li> 
     <% }) %>
   </ul>
+  <a href="/netflixShows/new">Add new show</a>
 </body>
 </html>
