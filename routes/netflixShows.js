@@ -6,6 +6,7 @@ const router = Router()
 router.get('/', netflixShowsCtrl.index)
 router.get('/new', netflixShowsCtrl.new)
 router.post('/', netflixShowsCtrl.create)
+router.delete('/:netflixShowId', netflixShowsCtrl.delete)
 router.get('/:netflixShowId', netflixShowsCtrl.show)
 
 export { router }

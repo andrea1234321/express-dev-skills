@@ -4,7 +4,8 @@ function index(req, res) {
   NetflixShow.find({})
   .then(netflixShows=> {
     res.render('netflixShows/index', {
-      netflixShows: netflixShows
+      netflixShows: netflixShows,
+      time: req.time
     })
   })
   .catch(error=> {
@@ -43,9 +44,21 @@ function show(req,res){
   })
 }
 
+function deleteShow(req,res){
+  NetflixShow.findByIdAndDelete(req.params.netflixShowId)
+  .then(netflixShow=> {
+    res.redirect('/netflixShows')
+  })
+  .catch(error=> {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 export{
   index,
   newNetflixShow as new,
   create,
-  show
+  show,
+  deleteShow as delete
 }

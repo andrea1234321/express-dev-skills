@@ -10,3 +10,16 @@ img{
   width: 500px;
   display: block;
 }
+
+.delete-show {
+  display: inline-block;
+  margin-right: 10px;
+}
+	
+.delete-show button {
+  color: red;
+}
+	
+li {
+  list-style: none;
+}
